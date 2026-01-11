@@ -1,0 +1,12 @@
+[project]
+name = "sasha"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "instructor>=1.14.1",
+    "openrouter>=0.1.1",
+    "pokerkit>=0.7.2",
+    "pydantic>=2.12.5",
+]
