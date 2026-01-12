@@ -1,0 +1,54 @@
+[run]
+matchup_name = "arena-run"
+hand_count = 100
+run_seed = 42
+blinds = [1, 2]
+starting_stack_bb = 100
+db_path = "tmp/arena.db"
+code_version = "dev"
+lease_batch_size = 100
+
+[openrouter]
+timeout_ms = 60000
+# http_referer = "http://localhost"
+# x_title = "LLM Poker Arena"
+
+[[agents]]
+id = "sonnet_mem"
+model = "anthropic/claude-sonnet-4.5"
+use_memory = true
+
+[[agents]]
+id = "sonnet_nomem"
+model = "anthropic/claude-sonnet-4.5"
+use_memory = false
+
+[[agents]]
+id = "gpt52_mem"
+model = "openai/gpt-5.2"
+use_memory = true
+
+[[agents]]
+id = "gpt52_nomem"
+model = "openai/gpt-5.2"
+use_memory = false
+
+[[matchups]]
+name = "sonnet_mem_vs_sonnet_nomem"
+a = "sonnet_mem"
+b = "sonnet_nomem"
+
+[[matchups]]
+name = "gpt52_mem_vs_gpt52_nomem"
+a = "gpt52_mem"
+b = "gpt52_nomem"
+
+[[matchups]]
+name = "sonnet_mem_vs_gpt52_mem"
+a = "sonnet_mem"
+b = "gpt52_mem"
+
+[[matchups]]
+name = "sonnet_nomem_vs_gpt52_nomem"
+a = "sonnet_nomem"
+b = "gpt52_nomem"

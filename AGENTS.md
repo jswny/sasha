@@ -16,4 +16,4 @@ curl -s https://openrouter.ai/api/v1/models \
 
 ## Python env
 Use `uv` for dependency management and syncing the environment.
-
+For ad-hoc Python execution, always run via `uv run python - <<'PY'` so the project venv is active.
